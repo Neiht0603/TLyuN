@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quản lý slide, bài viết, đối tác và kho TLyuN.">
+    <title>Quản lý dữ liệu trang | TLyuN</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <script src="../assets/js/components.js" defer></script>
+    <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/admin-guard.js" defer></script>
+    <script src="../assets/js/admin-collections.js" defer></script>
+  </head>
+  <body>
+    <div data-component="header"></div>
+
+    <main class="admin-page">
+      <header class="admin-page__heading">
+        <p class="admin-page__eyebrow">TLyuN · Quản trị</p>
+        <h1>Quản lý nội dung danh sách</h1>
+        <p>Thêm, sửa hoặc gỡ các mục đang được hiển thị trên website.</p>
+        <nav class="admin-page__links" aria-label="Công cụ quản trị">
+          <a class="button button--quiet" href="admin-content.html">Chỉnh nội dung trang</a>
+          <a class="button button--quiet" href="dashboard.html">Về tài khoản</a>
+        </nav>
+      </header>
+
+      <p class="admin-status" id="admin-guard-status" role="status" aria-live="polite">Đang kiểm tra quyền truy cập...</p>
+      <section class="admin-workspace" id="admin-collections-workspace" data-admin-protected hidden>
+        <div class="admin-status" id="admin-collections-status" role="status" aria-live="polite"></div>
+        <nav class="admin-tabs" aria-label="Chọn danh sách cần quản lý" role="tablist">
+          <button class="admin-tabs__button" type="button" role="tab" data-collection-tab="service-slides" aria-selected="true">Slide dịch vụ</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-collection-tab="articles" aria-selected="false">Bài viết</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-collection-tab="customers" aria-selected="false">Đối tác</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-collection-tab="warehouses" aria-selected="false">Kho</button>
+        </nav>
+
+        <section class="admin-collection-panel" data-collection-panel="service-slides" role="tabpanel">
+          <div class="admin-collection-panel__heading">
+            <div>
+              <h2>Slide dịch vụ</h2>
+              <p>Ảnh được dùng trong carousel trang chủ và trang dịch vụ.</p>
+            </div>
+            <label class="admin-inline-field"><span>Đối tượng</span>
+              <select id="slide-audience">
+                <option value="customer">Khách hàng</option>
+                <option value="business">Doanh nghiệp</option>
+              </select>
+            </label>
+          </div>
+          <div class="admin-collection-layout">
+            <div class="admin-collection-list" id="service-slides-list" aria-live="polite"></div>
+            <form class="form admin-entity-form card" id="service-slides-form" novalidate>
+              <h3 id="service-slides-form-heading">Thêm slide</h3>
+              <input name="id" type="hidden">
+              <label class="form__field"><span>Tiêu đề</span><input name="title" type="text" maxlength="180" required></label>
+              <label class="form__field"><span>Mô tả ảnh (alt)</span><input name="alt" type="text" maxlength="180" required></label>
+              <label class="form__field"><span>URL ảnh</span><input name="image_url" type="url" maxlength="2048" required></label>
+              <label class="form__field"><span>Thứ tự hiển thị</span><input name="sort_order" type="number" min="0" step="1" value="0"></label>
+              <label class="admin-checkbox"><input name="is_published" type="checkbox" checked><span>Đã xuất bản</span></label>
+              <div class="admin-entity-form__actions">
+                <button class="button button--accent" type="submit">Lưu slide</button>
+                <button class="button button--quiet" type="reset">Xóa biểu mẫu</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-collection-panel" data-collection-panel="articles" role="tabpanel" hidden>
+          <div class="admin-collection-panel__heading">
+            <div><h2>Bài viết</h2><p>Quản lý thẻ bài viết hiển thị trên trang chủ.</p></div>
+          </div>
+          <div class="admin-collection-layout">
+            <div class="admin-collection-list" id="articles-list" aria-live="polite"></div>
+            <form class="form admin-entity-form card" id="articles-form" novalidate>
+              <h3 id="articles-form-heading">Thêm bài viết</h3>
+              <input name="id" type="hidden">
+              <label class="form__field"><span>Tiêu đề</span><input name="title" type="text" maxlength="180" required></label>
+              <label class="form__field"><span>Tóm tắt</span><textarea name="summary" rows="3" maxlength="1000"></textarea></label>
+              <label class="form__field"><span>Ngày đăng</span><input name="published_at" type="date"></label>
+              <label class="form__field"><span>URL ảnh</span><input name="image_url" type="url" maxlength="2048"></label>
+              <label class="form__field"><span>URL bài viết</span><input name="url" type="url" maxlength="2048"></label>
+              <label class="form__field"><span>Thứ tự hiển thị</span><input name="sort_order" type="number" min="0" step="1" value="0"></label>
+              <label class="admin-checkbox"><input name="is_published" type="checkbox" checked><span>Đã xuất bản</span></label>
+              <div class="admin-entity-form__actions">
+                <button class="button button--accent" type="submit">Lưu bài viết</button>
+                <button class="button button--quiet" type="reset">Xóa biểu mẫu</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-collection-panel" data-collection-panel="customers" role="tabpanel" hidden>
+          <div class="admin-collection-panel__heading">
+            <div><h2>Khách hàng và đối tác</h2><p>Quản lý logo và tên hiển thị trên trang chủ.</p></div>
+          </div>
+          <div class="admin-collection-layout">
+            <div class="admin-collection-list" id="customers-list" aria-live="polite"></div>
+            <form class="form admin-entity-form card" id="customers-form" novalidate>
+              <h3 id="customers-form-heading">Thêm khách hàng/đối tác</h3>
+              <input name="id" type="hidden">
+              <label class="form__field"><span>Tên hiển thị</span><input name="name" type="text" maxlength="180" required></label>
+              <label class="form__field"><span>URL logo</span><input name="logo_url" type="url" maxlength="2048"></label>
+              <label class="form__field"><span>Thứ tự hiển thị</span><input name="sort_order" type="number" min="0" step="1" value="0"></label>
+              <label class="admin-checkbox"><input name="is_published" type="checkbox" checked><span>Đã xuất bản</span></label>
+              <div class="admin-entity-form__actions">
+                <button class="button button--accent" type="submit">Lưu đối tác</button>
+                <button class="button button--quiet" type="reset">Xóa biểu mẫu</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-collection-panel" data-collection-panel="warehouses" role="tabpanel" hidden>
+          <div class="admin-collection-panel__heading">
+            <div><h2>Kho</h2><p>Thông tin trong danh sách kho công khai. Xóa kho cần được BE kiểm tra liên kết dữ liệu.</p></div>
+          </div>
+          <div class="admin-collection-layout">
+            <div class="admin-collection-list" id="warehouses-list" aria-live="polite"></div>
+            <form class="form admin-entity-form card" id="warehouses-form" novalidate>
+              <h3 id="warehouses-form-heading">Thêm kho</h3>
+              <input name="id" type="hidden">
+              <label class="form__field"><span>Tên kho</span><input name="name" type="text" maxlength="180" required></label>
+              <label class="form__field"><span>Tỉnh/thành phố</span><input name="city" type="text" maxlength="120" required></label>
+              <label class="form__field"><span>Loại kho</span><select name="warehouse_type" required><option value="">Chọn loại kho</option><option value="standard">Kho thường</option><option value="cold">Kho lạnh</option><option value="mini">Kho mini</option><option value="container">Bãi container</option></select></label>
+              <label class="form__field"><span>Hình thức lưu trữ</span><select name="storage_type" required><option value="">Chọn hình thức</option><option value="ambient">Thường</option><option value="chilled">Mát</option><option value="frozen">Đông lạnh</option></select></label>
+              <label class="form__field"><span>Diện tích (m²)</span><input name="area_m2" type="number" min="0" step="any" required></label>
+              <label class="form__field"><span>Giá thuê</span><input name="price_per_m2" type="number" min="0" step="any" required></label>
+              <label class="form__field"><span>Đơn vị giá</span><input name="price_unit" type="text" maxlength="60" value="đ/m²/tháng" required></label>
+              <label class="form__field"><span>URL ảnh</span><input name="image_url" type="url" maxlength="2048"></label>
+              <label class="form__field"><span>Mô tả</span><textarea name="description" rows="3" maxlength="1000"></textarea></label>
+              <label class="admin-checkbox"><input name="is_published" type="checkbox" checked><span>Đang hiển thị trên website</span></label>
+              <div class="admin-entity-form__actions">
+                <button class="button button--accent" type="submit">Lưu kho</button>
+                <button class="button button--quiet" type="reset">Xóa biểu mẫu</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div data-component="footer"></div>
+  </body>
+</html>

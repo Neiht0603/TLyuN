@@ -10,16 +10,18 @@
     <link rel="stylesheet" href="../assets/css/pages/warehouses.css">
     <script src="../assets/js/components.js" defer></script>
     <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/site-content.js" defer></script>
     <script src="../assets/js/warehouses.js" defer></script>
   </head>
   <body>
     <div data-component="header"></div>
 
-    <main class="warehouses-page">
+    <main class="warehouses-page" data-content-page="warehouses">
       <header class="warehouses-page__heading">
-        <p class="warehouses-page__eyebrow">TLyuN · Hệ thống</p>
-        <h1>Hệ thống kho</h1>
-        <p>Tìm không gian lưu trữ phù hợp với nhu cầu của bạn.</p>
+        <p class="warehouses-page__eyebrow" data-content-key="eyebrow">TLyuN · Hệ thống</p>
+        <h1 data-content-key="title">Hệ thống kho</h1>
+        <p data-content-key="description">Tìm không gian lưu trữ phù hợp với nhu cầu của bạn.</p>
+        <p class="admin-status" role="status" aria-live="polite" data-content-status hidden></p>
       </header>
 
       <form class="warehouse-filter card" id="warehouse-filter-form">

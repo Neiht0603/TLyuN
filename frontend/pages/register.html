@@ -10,16 +10,18 @@
     <link rel="stylesheet" href="../assets/css/pages/auth.css">
     <script src="../assets/js/components.js" defer></script>
     <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/site-content.js" defer></script>
     <script src="../assets/js/auth.js" defer></script>
   </head>
   <body>
     <div data-component="header"></div>
 
-    <main class="auth-page auth-page--register">
+    <main class="auth-page auth-page--register" data-content-page="register">
       <section class="auth-card card" aria-labelledby="register-heading">
-        <p class="auth-card__eyebrow">TLyuN · Tài khoản</p>
-        <h1 id="register-heading">Tạo tài khoản</h1>
-        <p class="auth-card__intro">Đăng ký tài khoản khách hàng cá nhân hoặc doanh nghiệp.</p>
+        <p class="auth-card__eyebrow" data-content-key="eyebrow">TLyuN · Tài khoản</p>
+        <h1 id="register-heading" data-content-key="title">Tạo tài khoản</h1>
+        <p class="auth-card__intro" data-content-key="description">Đăng ký tài khoản khách hàng cá nhân hoặc doanh nghiệp.</p>
+        <p class="admin-status" role="status" aria-live="polite" data-content-status hidden></p>
         <div class="auth-message" id="register-error" role="alert" aria-live="assertive"></div>
         <form class="form auth-form" id="register-form" novalidate>
           <div class="form__field">
@@ -52,7 +54,7 @@
           <div class="form__field">
             <label for="register-password">Mật khẩu</label>
             <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-hint">
-            <span class="auth-form__hint" id="password-hint">Mật khẩu cần có ít nhất 8 ký tự.</span>
+            <span class="auth-form__hint" id="password-hint" data-content-key="password_hint">Mật khẩu cần có ít nhất 8 ký tự.</span>
           </div>
           <div class="form__field">
             <label for="confirm-password">Xác nhận mật khẩu</label>
@@ -60,11 +62,11 @@
           </div>
           <label class="auth-consent" for="privacy-consent">
             <input id="privacy-consent" name="privacy_consent" type="checkbox" required>
-            <span>Tôi đồng ý với chính sách quyền riêng tư.</span>
+            <span data-content-key="privacy_text">Tôi đồng ý với chính sách quyền riêng tư.</span>
           </label>
           <button class="button button--accent auth-form__submit" id="register-submit" type="submit">Tạo tài khoản</button>
         </form>
-        <p class="auth-card__footer">Đã có tài khoản? <a href="login.html" id="auth-login-link">Đăng nhập</a></p>
+        <p class="auth-card__footer"><span data-content-key="login_prompt">Đã có tài khoản?</span> <a href="login.html" id="auth-login-link" data-content-key="login_link_label">Đăng nhập</a></p>
       </section>
     </main>
 

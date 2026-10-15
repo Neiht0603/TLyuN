@@ -27,3 +27,6 @@ powershell -ExecutionPolicy Bypass -File .\test\mock-api.ps1 -Port 9000
 
 The homepage warehouse and partner sample images use the external URLs in
 `mock-data.json`, so they require an internet connection to load.
+The mock serves read-only published page copy for all public pages. Admin CMS
+endpoints and staff permissions are intentionally not simulated; those require
+the backend and database work listed in `docs/content-management-tasks.md`.

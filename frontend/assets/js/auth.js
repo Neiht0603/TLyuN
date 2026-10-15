@@ -277,6 +277,10 @@
         throw new Error("Máy chủ chưa trả về thông tin tài khoản.");
       }
       const role = typeof user.role === "string" ? user.role : "";
+      const adminTools = document.getElementById("dashboard-admin-tools");
+      if (adminTools) {
+        adminTools.hidden = !["admin", "staff", "employee"].includes(role.toLowerCase());
+      }
       const roleLabel = {
         customer: "Khách hàng cá nhân",
         business: "Khách hàng doanh nghiệp",

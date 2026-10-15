@@ -130,6 +130,20 @@ function Get-ApiResponse {
         Write-JsonResponse $response 200 @{ success = $true; data = @{ settings = $settings } }
         return $true
       }
+      "/api/v1/site-content" {
+        $page = $request.QueryString["page"]
+        if ($page -notin @("home", "services", "warehouses", "contact", "login", "register")) {
+          Write-JsonResponse $response 400 @{ success = $false; error = @{ code = "INVALID_PAGE"; message = "Page key is not supported." } }
+          return $true
+        }
+        $content = $mockData.site_content.pages.$page
+        if ($page -eq "home" -and $content.hero_image_url -match "^/") {
+          $content = $content | Select-Object *
+          $content.hero_image_url = Get-MockImageUrl $content.hero_image_url $request
+        }
+        Write-JsonResponse $response 200 @{ success = $true; data = @{ page = $page; content = $content } }
+        return $true
+      }
       "/api/v1/service-slides" {
         $audience = $request.QueryString["audience"]
         if ($audience -notin @("customer", "business")) {

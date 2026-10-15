@@ -10,17 +10,19 @@
     <link rel="stylesheet" href="../assets/css/pages/services.css">
     <script src="../assets/js/components.js" defer></script>
     <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/site-content.js" defer></script>
     <script src="../assets/js/services.js" defer></script>
   </head>
   <body>
     <div data-component="header"></div>
 
-    <main class="services-page">
+    <main class="services-page" data-content-page="services">
       <section class="services-showcase" aria-labelledby="services-showcase-heading">
         <div class="services-showcase__content">
-          <p class="services-page__eyebrow"></p>
-          <h1 id="services-showcase-heading">Dịch vụ vận chuyển và đóng gói</h1>
-          <p>Giải pháp linh hoạt từ khâu lấy hàng đến giao tận nơi.</p>
+          <p class="services-page__eyebrow" data-content-key="eyebrow"></p>
+          <h1 id="services-showcase-heading" data-content-key="title">Dịch vụ vận chuyển và đóng gói</h1>
+          <p data-content-key="description">Giải pháp linh hoạt từ khâu lấy hàng đến giao tận nơi.</p>
+          <p class="admin-status" role="status" aria-live="polite" data-content-status hidden></p>
         </div>
         <div class="services-showcase__carousel" id="services-showcase-carousel" aria-label="Hình ảnh dịch vụ" data-fallback-image="../assets/images/warehouse-hero.jpg">
           <div class="services-showcase__track" id="services-showcase-track" aria-live="off"></div>
@@ -31,16 +33,16 @@
 
       <header class="services-page__intro">
         <p class="services-page__eyebrow">TLyuN · Dịch vụ</p>
-        <h2>Yêu cầu báo giá dịch vụ</h2>
+        <h2 data-content-key="quote_heading">Yêu cầu báo giá dịch vụ</h2>
         <p>Điền thông tin bên dưới để gửi yêu cầu.</p>
       </header>
 
       <section class="transport-overview" id="b" aria-labelledby="transport-overview-heading">
         <div class="transport-overview__content">
           <span class="transport-overview__eyebrow">Dịch vụ</span>
-          <h2 id="transport-overview-heading">Vận chuyển</h2>
-          <p class="transport-overview__subtitle">Từ nhà cung cấp đến kho và đến tay khách hàng.</p>
-          <ol class="transport-steps">
+          <h2 id="transport-overview-heading" data-content-key="transport_title">Vận chuyển</h2>
+          <p class="transport-overview__subtitle" data-content-key="transport_subtitle">Từ nhà cung cấp đến kho và đến tay khách hàng.</p>
+          <ol class="transport-steps" data-content-list="transport_steps">
             <li><span class="transport-steps__number">1</span><div><strong>Lấy hàng từ nhà cung cấp về kho</strong></div></li>
             <li><span class="transport-steps__number">2</span><div><strong>Chuyển hàng giữa các kho</strong></div></li>
             <li><span class="transport-steps__number">3</span><div><strong>Giao hàng nội thành và liên tỉnh</strong><span>Xe tải, container.</span></div></li>
@@ -104,9 +106,9 @@
 
       <section class="value-added-services" aria-labelledby="value-added-heading">
         <p class="value-added-services__eyebrow">C</p>
-        <h2 id="value-added-heading">Dịch vụ giá trị gia tăng</h2>
-        <p class="value-added-services__intro">Hoàn thiện chuỗi cung ứng ngay tại kho.</p>
-        <ol class="value-added-services__list">
+        <h2 id="value-added-heading" data-content-key="value_added_heading">Dịch vụ giá trị gia tăng</h2>
+        <p class="value-added-services__intro" data-content-key="value_added_intro">Hoàn thiện chuỗi cung ứng ngay tại kho.</p>
+        <ol class="value-added-services__list" data-content-list="value_added_services">
           <li class="value-added-card">
             <span class="value-added-card__number">01</span>
             <h3>Đóng gói, quấn pallet, gia công</h3>

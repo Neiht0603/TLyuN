@@ -10,23 +10,25 @@
     <link rel="stylesheet" href="../assets/css/pages/contact.css">
     <script src="../assets/js/components.js" defer></script>
     <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/site-content.js" defer></script>
     <script src="../assets/js/contact.js" defer></script>
   </head>
   <body>
     <div data-component="header"></div>
 
-    <main class="contact-page">
+    <main class="contact-page" data-content-page="contact">
       <header class="contact-page__heading">
-        <p class="contact-page__eyebrow">TLyuN · Kết nối</p>
-        <h1>Liên hệ với chúng tôi</h1>
-        <p>Gửi lời nhắn hoặc liên hệ qua email bên dưới.</p>
+        <p class="contact-page__eyebrow" data-content-key="eyebrow">TLyuN · Kết nối</p>
+        <h1 data-content-key="title">Liên hệ với chúng tôi</h1>
+        <p data-content-key="description">Gửi lời nhắn hoặc liên hệ qua email bên dưới.</p>
       </header>
+      <p class="admin-status" role="status" aria-live="polite" data-content-status hidden></p>
 
       <div class="contact-layout">
         <section class="contact-details card" aria-labelledby="contact-details-heading">
-          <h2 id="contact-details-heading">Thông tin liên hệ</h2>
-          <p>Chọn một trong các email sau để liên hệ trực tiếp:</p>
-          <ul class="contact-details__emails">
+          <h2 id="contact-details-heading" data-content-key="details_title">Thông tin liên hệ</h2>
+          <p data-content-key="details_description">Chọn một trong các email sau để liên hệ trực tiếp:</p>
+          <ul class="contact-details__emails" data-content-list="emails">
             <li><a href="mailto:52400318@student.tdtu.edu.vn">52400318@student.tdtu.edu.vn</a></li>
             <li><a href="mailto:52400140@student.tdtu.edu.vn">52400140@student.tdtu.edu.vn</a></li>
             <li><a href="mailto:52400287@student.tdtu.edu.vn">52400287@student.tdtu.edu.vn</a></li>

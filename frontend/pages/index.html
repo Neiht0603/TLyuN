@@ -10,18 +10,20 @@
     <link rel="stylesheet" href="../assets/css/pages/home.css">
     <script src="../assets/js/components.js" defer></script>
     <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/site-content.js" defer></script>
     <script src="../assets/js/home.js" defer></script>
   </head>
   <body>
     <div data-component="header"></div>
 
-    <main class="home-main">
+    <main class="home-main" data-content-page="home">
       <section class="home-hero" id="home-hero" data-home-section="hero" aria-labelledby="hero-slogan">
-        <img class="home-hero__image" id="hero-background" src="../assets/images/warehouse-hero.jpg" data-default-src="../assets/images/warehouse-hero.jpg" alt="" width="1920" height="1080" fetchpriority="high">
+        <img class="home-hero__image" id="hero-background" src="../assets/images/warehouse-hero.jpg" data-default-src="../assets/images/warehouse-hero.jpg" data-content-image="hero_image_url" alt="" width="1920" height="1080" fetchpriority="high">
         <div class="home-hero__content">
-          <p class="home-hero__eyebrow">TLyuN · Giải pháp kho vận</p>
-          <h1 id="hero-slogan">Kho vận linh hoạt, vận hành thông minh</h1>
-          <p class="home-hero__description">Không gian lưu trữ và dịch vụ vận chuyển phù hợp với nhu cầu của bạn.</p>
+          <p class="home-hero__eyebrow" data-content-key="eyebrow">TLyuN · Giải pháp kho vận</p>
+          <h1 id="hero-slogan" data-content-key="hero_slogan">Kho vận linh hoạt, vận hành thông minh</h1>
+          <p class="home-hero__description" data-content-key="hero_description">Không gian lưu trữ và dịch vụ vận chuyển phù hợp với nhu cầu của bạn.</p>
+          <div class="home-status" id="home-content-status" role="status" aria-live="polite" data-content-status hidden></div>
           <div class="home-hero__actions">
             <a class="button home-hero__customer-button" id="customer-entry" href="login.html?audience=customer"><span>Customer</span></a>
             <a class="button home-hero__business-button" id="business-entry" href="login.html?audience=business"><span>Business</span></a>
@@ -33,7 +35,7 @@
       <section class="home-section service-section" id="service-carousel" data-home-section="services" aria-labelledby="service-heading">
         <div class="home-section__heading">
           <p class="home-section__eyebrow">Dịch vụ</p>
-          <h2 id="service-heading">Giải pháp kho hàng</h2>
+          <h2 id="service-heading" data-content-key="service_heading">Giải pháp kho hàng</h2>
         </div>
         <div class="service-carousel__viewport" aria-live="off">
           <div class="service-carousel__track" id="service-carousel-track" aria-label="Ảnh dịch vụ"></div>
@@ -47,7 +49,7 @@
       <section class="home-section home-section--mist" id="article-section" data-home-section="articles" aria-labelledby="article-heading">
         <div class="home-section__heading">
           <p class="home-section__eyebrow">Cập nhật</p>
-          <h2 id="article-heading">Bài viết</h2>
+          <h2 id="article-heading" data-content-key="article_heading">Bài viết</h2>
         </div>
         <div class="article-list" id="article-list" aria-live="polite"></div>
         <div class="home-status" id="article-status" role="status" aria-live="polite" data-status-container></div>
@@ -56,7 +58,7 @@
       <section class="home-section" id="customer-section" data-home-section="customers" aria-labelledby="customer-heading">
         <div class="home-section__heading">
           <p class="home-section__eyebrow">Đồng hành</p>
-          <h2 id="customer-heading">Khách hàng &amp; đối tác</h2>
+          <h2 id="customer-heading" data-content-key="customer_heading">Khách hàng &amp; đối tác</h2>
         </div>
         <ul class="customer-list" id="customer-list" aria-live="polite"></ul>
         <div class="home-status" id="customer-status" role="status" aria-live="polite" data-status-container></div>

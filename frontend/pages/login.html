@@ -10,16 +10,18 @@
     <link rel="stylesheet" href="../assets/css/pages/auth.css">
     <script src="../assets/js/components.js" defer></script>
     <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/site-content.js" defer></script>
     <script src="../assets/js/auth.js" defer></script>
   </head>
   <body>
     <div data-component="header"></div>
 
-    <main class="auth-page">
+    <main class="auth-page" data-content-page="login">
       <section class="auth-card card" aria-labelledby="login-heading">
-        <p class="auth-card__eyebrow">TLyuN · Tài khoản</p>
-        <h1 id="login-heading">Đăng nhập</h1>
-        <p class="auth-card__intro">Đăng nhập để tiếp tục sử dụng dịch vụ TLyuN.</p>
+        <p class="auth-card__eyebrow" data-content-key="eyebrow">TLyuN · Tài khoản</p>
+        <h1 id="login-heading" data-content-key="title">Đăng nhập</h1>
+        <p class="auth-card__intro" data-content-key="description">Đăng nhập để tiếp tục sử dụng dịch vụ TLyuN.</p>
+        <p class="admin-status" role="status" aria-live="polite" data-content-status hidden></p>
         <div class="auth-message" id="login-error" role="alert" aria-live="assertive"></div>
         <form class="form auth-form" id="login-form" novalidate>
           <div class="form__field">
@@ -42,7 +44,7 @@
           </div>
           <button class="button button--accent auth-form__submit" id="login-submit" type="submit">Đăng nhập</button>
         </form>
-        <p class="auth-card__footer">Chưa có tài khoản? <a id="register-link" href="register.html">Đăng ký</a></p>
+        <p class="auth-card__footer"><span data-content-key="register_prompt">Chưa có tài khoản?</span> <a id="register-link" href="register.html" data-content-key="register_link_label">Đăng ký</a></p>
       </section>
     </main>
 

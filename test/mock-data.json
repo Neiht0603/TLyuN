@@ -3,6 +3,76 @@
     "hero_slogan": "Kho vận linh hoạt, vận hành thông minh",
     "hero_image_path": "/frontend/assets/images/warehouse-hero.jpg"
   },
+  "site_content": {
+    "pages": {
+      "home": {
+        "eyebrow": "TLyuN · Giải pháp kho vận",
+        "hero_slogan": "Kho vận linh hoạt, vận hành thông minh",
+        "hero_description": "Không gian lưu trữ và dịch vụ vận chuyển phù hợp với nhu cầu của bạn.",
+        "hero_image_url": "/frontend/assets/images/warehouse-hero.jpg",
+        "service_heading": "Giải pháp kho hàng",
+        "article_heading": "Bài viết",
+        "customer_heading": "Khách hàng & đối tác"
+      },
+      "services": {
+        "eyebrow": "TLyuN · Dịch vụ",
+        "title": "Dịch vụ vận chuyển và đóng gói",
+        "description": "Giải pháp linh hoạt từ khâu lấy hàng đến giao tận nơi.",
+        "quote_heading": "Yêu cầu báo giá dịch vụ",
+        "transport_title": "Vận chuyển",
+        "transport_subtitle": "Từ nhà cung cấp đến kho và đến tay khách hàng.",
+        "transport_steps": [
+          { "title": "Lấy hàng từ nhà cung cấp về kho", "description": "" },
+          { "title": "Chuyển hàng giữa các kho", "description": "" },
+          { "title": "Giao hàng nội thành và liên tỉnh", "description": "Xe tải, container." },
+          { "title": "Vận chuyển lạnh", "description": "Giữ nhiệt độ suốt hành trình." },
+          { "title": "Theo dõi lộ trình, trạng thái chuyến xe", "description": "Cập nhật theo thời gian thực." }
+        ],
+        "value_added_heading": "Dịch vụ giá trị gia tăng",
+        "value_added_intro": "Hoàn thiện chuỗi cung ứng ngay tại kho.",
+        "value_added_services": [
+          { "title": "Đóng gói, quấn pallet, gia công", "description": "Bao gồm ghép bộ (kitting)." },
+          { "title": "Xử lý hàng hoàn trả", "description": "Reverse logistics." },
+          { "title": "Bảo hiểm hàng hóa", "description": "Bảo vệ hàng trong kho và trên đường." },
+          { "title": "Hỗ trợ hải quan, chứng từ", "description": "Thủ tục và hồ sơ xuất nhập khẩu." },
+          { "title": "Fulfillment thương mại điện tử", "description": "Nhận đơn từ sàn, đóng gói, giao hàng." }
+        ]
+      },
+      "warehouses": {
+        "eyebrow": "TLyuN · Hệ thống",
+        "title": "Hệ thống kho",
+        "description": "Tìm không gian lưu trữ phù hợp với nhu cầu của bạn."
+      },
+      "contact": {
+        "eyebrow": "TLyuN · Kết nối",
+        "title": "Liên hệ với chúng tôi",
+        "description": "Gửi lời nhắn hoặc liên hệ qua email bên dưới.",
+        "details_title": "Thông tin liên hệ",
+        "details_description": "Chọn một trong các email sau để liên hệ trực tiếp:",
+        "emails": [
+          "52400318@student.tdtu.edu.vn",
+          "52400140@student.tdtu.edu.vn",
+          "52400287@student.tdtu.edu.vn"
+        ]
+      },
+      "login": {
+        "eyebrow": "TLyuN · Tài khoản",
+        "title": "Đăng nhập",
+        "description": "Đăng nhập để tiếp tục sử dụng dịch vụ TLyuN.",
+        "register_prompt": "Chưa có tài khoản?",
+        "register_link_label": "Đăng ký"
+      },
+      "register": {
+        "eyebrow": "TLyuN · Tài khoản",
+        "title": "Tạo tài khoản",
+        "description": "Đăng ký tài khoản khách hàng cá nhân hoặc doanh nghiệp.",
+        "password_hint": "Mật khẩu cần có ít nhất 8 ký tự.",
+        "privacy_text": "Tôi đồng ý với chính sách quyền riêng tư.",
+        "login_prompt": "Đã có tài khoản?",
+        "login_link_label": "Đăng nhập"
+      }
+    }
+  },
   "service_slides": {
     "customer": [
       {

@@ -1,0 +1,329 @@
+.admin-page {
+  width: min(100% - 2 * var(--page-gutter), var(--content-width));
+  margin-inline: auto;
+  padding-block: clamp(var(--space-6), 6vw, var(--space-7));
+}
+
+.admin-page__heading {
+  margin-bottom: var(--space-5);
+}
+
+.admin-page__eyebrow {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.admin-page__heading h1 {
+  margin-bottom: var(--space-3);
+}
+
+.admin-page__heading > p:not(.admin-page__eyebrow) {
+  max-width: 48rem;
+  color: var(--color-text-muted);
+}
+
+.admin-page__links,
+.admin-form__actions,
+.admin-entity-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.admin-page__links {
+  margin-top: var(--space-4);
+}
+
+.admin-status {
+  margin-bottom: var(--space-4);
+}
+
+.admin-status:empty {
+  display: none;
+}
+
+.admin-status--error {
+  color: var(--color-error);
+}
+
+.admin-status--success {
+  color: var(--color-success);
+}
+
+.admin-workspace {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.admin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-tabs__button {
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-navy);
+  background: #FFFFFF;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.admin-tabs__button[aria-selected="true"] {
+  border-color: var(--color-navy);
+  color: #FFFFFF;
+  background: var(--color-navy);
+}
+
+.admin-tabs__button:focus-visible,
+.admin-collection-item button:focus-visible {
+  outline: 3px solid var(--color-amber);
+  outline-offset: 3px;
+}
+
+.admin-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.admin-panel {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.admin-panel h2,
+.admin-collection-panel h2 {
+  margin-bottom: 0;
+}
+
+.admin-form__hint,
+.admin-collection-panel__heading p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.admin-form__actions {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.admin-inline-field {
+  display: grid;
+  min-width: 12rem;
+  gap: var(--space-2);
+  font-weight: 600;
+}
+
+.admin-inline-field select {
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  background: #FFFFFF;
+}
+
+.admin-checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 600;
+}
+
+.admin-checkbox input {
+  width: 1.15rem;
+  min-height: 1.15rem;
+  height: 1.15rem;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
+  accent-color: var(--color-navy);
+}
+
+.admin-collection-panel {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.admin-collection-panel__heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.admin-collection-panel__heading > div {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.admin-collection-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  align-items: start;
+  gap: var(--space-4);
+}
+
+.admin-collection-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.admin-collection-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #FFFFFF;
+}
+
+.admin-collection-item__copy {
+  min-width: 0;
+}
+
+.admin-collection-item__copy strong,
+.admin-collection-item__copy span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.admin-collection-item__copy span {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.admin-collection-item__actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--space-2);
+}
+
+.admin-collection-item button {
+  min-height: 2.5rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-navy);
+  background: #FFFFFF;
+  cursor: pointer;
+  font: inherit;
+}
+
+.admin-collection-item button:hover {
+  border-color: var(--color-navy);
+}
+
+.admin-collection-item button[data-delete-id] {
+  color: var(--color-error);
+}
+
+.admin-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+}
+
+.admin-pagination button {
+  min-height: 2.5rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-navy);
+  background: #FFFFFF;
+  cursor: pointer;
+  font: inherit;
+}
+
+.admin-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.admin-pagination span {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.admin-entity-form {
+  display: grid;
+  gap: var(--space-4);
+  position: sticky;
+  top: var(--space-4);
+}
+
+.admin-entity-form h3 {
+  margin: 0;
+}
+
+.admin-entity-form__actions > button {
+  flex: 1 1 auto;
+}
+
+[data-admin-protected][hidden],
+[data-content-panel][hidden],
+[data-collection-panel][hidden] {
+  display: none !important;
+}
+
+@media (max-width: 52rem) {
+  .admin-collection-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-entity-form {
+    position: static;
+  }
+}
+
+@media (max-width: 34rem) {
+  .admin-page {
+    padding-block: var(--space-5);
+  }
+
+  .admin-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 0 0 var(--space-2);
+  }
+
+  .admin-tabs__button {
+    flex: 0 0 auto;
+  }
+
+  .admin-collection-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-collection-item__actions {
+    width: 100%;
+  }
+
+  .admin-collection-item__actions button {
+    flex: 1;
+  }
+
+  .admin-page__links > .button {
+    width: 100%;
+  }
+}

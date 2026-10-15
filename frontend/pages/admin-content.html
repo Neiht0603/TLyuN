@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quản trị nội dung các trang TLyuN.">
+    <title>Quản trị nội dung | TLyuN</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/admin.css">
+    <script src="../assets/js/components.js" defer></script>
+    <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/admin-guard.js" defer></script>
+    <script src="../assets/js/admin-content.js" defer></script>
+  </head>
+  <body>
+    <div data-component="header"></div>
+
+    <main class="admin-page">
+      <header class="admin-page__heading">
+        <p class="admin-page__eyebrow">TLyuN · Quản trị</p>
+        <h1>Chỉnh sửa nội dung trang</h1>
+        <p>Quản lý nội dung hiển thị công khai. Biểu mẫu đăng nhập và đăng ký không bị thay đổi.</p>
+        <nav class="admin-page__links" aria-label="Công cụ quản trị">
+          <a class="button button--quiet" href="admin-collections.html">Quản lý slide, bài viết, đối tác và kho</a>
+          <a class="button button--quiet" href="dashboard.html">Về tài khoản</a>
+        </nav>
+      </header>
+
+      <p class="admin-status" id="admin-guard-status" role="status" aria-live="polite">Đang kiểm tra quyền truy cập...</p>
+      <section class="admin-workspace" id="admin-content-workspace" data-admin-protected hidden>
+        <div class="admin-status" id="admin-content-status" role="status" aria-live="polite"></div>
+        <nav class="admin-tabs" aria-label="Chọn trang cần chỉnh sửa" role="tablist">
+          <button class="admin-tabs__button" type="button" role="tab" data-content-tab="home" aria-selected="true">Trang chủ</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-content-tab="services" aria-selected="false">Dịch vụ</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-content-tab="warehouses" aria-selected="false">Hệ thống kho</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-content-tab="contact" aria-selected="false">Liên hệ</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-content-tab="login" aria-selected="false">Đăng nhập</button>
+          <button class="admin-tabs__button" type="button" role="tab" data-content-tab="register" aria-selected="false">Đăng ký</button>
+        </nav>
+
+        <form class="form admin-form card" id="admin-content-form" novalidate>
+          <section class="admin-panel" data-content-panel="home" role="tabpanel">
+            <h2>Nội dung trang chủ</h2>
+            <label class="form__field"><span>Dòng giới thiệu</span><input name="eyebrow" type="text" maxlength="120"></label>
+            <label class="form__field"><span>Slogan</span><input name="hero_slogan" type="text" maxlength="180" required></label>
+            <label class="form__field"><span>Mô tả hero</span><textarea name="hero_description" rows="3" maxlength="500"></textarea></label>
+            <label class="form__field"><span>URL ảnh nền hero</span><input name="hero_image_url" type="url" inputmode="url" maxlength="2048"></label>
+            <label class="form__field"><span>Tiêu đề khu vực dịch vụ</span><input name="service_heading" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Tiêu đề khu vực bài viết</span><input name="article_heading" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Tiêu đề khu vực khách hàng/đối tác</span><input name="customer_heading" type="text" maxlength="180"></label>
+          </section>
+
+          <section class="admin-panel" data-content-panel="services" role="tabpanel" hidden>
+            <h2>Nội dung dịch vụ</h2>
+            <label class="form__field"><span>Dòng giới thiệu</span><input name="eyebrow" type="text" maxlength="120"></label>
+            <label class="form__field"><span>Tiêu đề trang</span><input name="title" type="text" maxlength="180" required></label>
+            <label class="form__field"><span>Mô tả trang</span><textarea name="description" rows="3" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Tiêu đề báo giá</span><input name="quote_heading" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Tiêu đề vận chuyển</span><input name="transport_title" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Mô tả vận chuyển</span><textarea name="transport_subtitle" rows="2" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Các bước vận chuyển (mỗi dòng một bước)</span><textarea name="transport_steps" rows="6" maxlength="2000" aria-describedby="transport-steps-hint"></textarea><small id="transport-steps-hint">Để trống phần này sẽ không xóa các bước hiện tại; BE cần chuẩn hóa danh sách theo thứ tự.</small></label>
+            <label class="form__field"><span>Tiêu đề dịch vụ giá trị gia tăng</span><input name="value_added_heading" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Mô tả dịch vụ giá trị gia tăng</span><textarea name="value_added_intro" rows="2" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Dịch vụ giá trị gia tăng (mỗi dòng: tên | mô tả)</span><textarea name="value_added_services" rows="6" maxlength="3000"></textarea></label>
+          </section>
+
+          <section class="admin-panel" data-content-panel="warehouses" role="tabpanel" hidden>
+            <h2>Nội dung trang hệ thống kho</h2>
+            <label class="form__field"><span>Dòng giới thiệu</span><input name="eyebrow" type="text" maxlength="120"></label>
+            <label class="form__field"><span>Tiêu đề trang</span><input name="title" type="text" maxlength="180" required></label>
+            <label class="form__field"><span>Mô tả trang</span><textarea name="description" rows="3" maxlength="500"></textarea></label>
+            <p class="admin-form__hint">Danh sách và thông tin từng kho được chỉnh trong mục “Quản lý kho”, không sửa trực tiếp ở phần nội dung này.</p>
+          </section>
+
+          <section class="admin-panel" data-content-panel="contact" role="tabpanel" hidden>
+            <h2>Nội dung trang liên hệ</h2>
+            <label class="form__field"><span>Dòng giới thiệu</span><input name="eyebrow" type="text" maxlength="120"></label>
+            <label class="form__field"><span>Tiêu đề trang</span><input name="title" type="text" maxlength="180" required></label>
+            <label class="form__field"><span>Mô tả trang</span><textarea name="description" rows="3" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Tiêu đề thông tin liên hệ</span><input name="details_title" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Mô tả thông tin liên hệ</span><textarea name="details_description" rows="2" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Email liên hệ (mỗi dòng một địa chỉ)</span><textarea name="emails" rows="4" maxlength="1000"></textarea></label>
+          </section>
+
+          <section class="admin-panel" data-content-panel="login" role="tabpanel" hidden>
+            <h2>Nội dung tĩnh trang đăng nhập</h2>
+            <p class="admin-form__hint">Chỉ sửa văn bản hiển thị. Không thể sửa trường đăng nhập, mật khẩu, validation hoặc API.</p>
+            <label class="form__field"><span>Dòng giới thiệu</span><input name="eyebrow" type="text" maxlength="120"></label>
+            <label class="form__field"><span>Tiêu đề</span><input name="title" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Mô tả</span><textarea name="description" rows="3" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Lời nhắc đăng ký</span><input name="register_prompt" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Nhãn liên kết đăng ký</span><input name="register_link_label" type="text" maxlength="80"></label>
+          </section>
+
+          <section class="admin-panel" data-content-panel="register" role="tabpanel" hidden>
+            <h2>Nội dung tĩnh trang đăng ký</h2>
+            <p class="admin-form__hint">Không thể thay đổi loại tài khoản, trường dữ liệu, xác nhận mật khẩu, quyền riêng tư hoặc payload đăng ký.</p>
+            <label class="form__field"><span>Dòng giới thiệu</span><input name="eyebrow" type="text" maxlength="120"></label>
+            <label class="form__field"><span>Tiêu đề</span><input name="title" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Mô tả</span><textarea name="description" rows="3" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Gợi ý mật khẩu</span><input name="password_hint" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Nội dung đồng ý quyền riêng tư</span><textarea name="privacy_text" rows="2" maxlength="500"></textarea></label>
+            <label class="form__field"><span>Lời nhắc đăng nhập</span><input name="login_prompt" type="text" maxlength="180"></label>
+            <label class="form__field"><span>Nhãn liên kết đăng nhập</span><input name="login_link_label" type="text" maxlength="80"></label>
+          </section>
+
+          <div class="admin-form__actions">
+            <button class="button button--accent" id="admin-content-save" type="submit">Lưu nội dung</button>
+            <span class="admin-form__hint">Thay đổi chỉ có hiệu lực công khai sau khi BE lưu và xuất bản thành công.</span>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div data-component="footer"></div>
+  </body>
+</html>
