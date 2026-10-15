@@ -1,0 +1,80 @@
+{
+  "site_settings": {
+    "hero_slogan": "Kho vận linh hoạt, vận hành thông minh",
+    "hero_image_path": "/frontend/assets/images/warehouse-hero.jpg"
+  },
+  "service_slides": {
+    "customer": [
+      {
+        "title": "Lưu trữ hàng hóa",
+        "alt": "Kho hàng tại Bangkok",
+        "image_path": "https://warehousesolution.vn/wp-content/uploads/2022/11/bangkok-thailand-scaled.jpeg"
+      },
+      {
+        "title": "Vận chuyển linh hoạt",
+        "alt": "Kho lưu trữ thực phẩm",
+        "image_path": "https://sec-warehouse.vn/wp-content/uploads/2017/11/thue-kho-dung-thuc-pham.jpg"
+      },
+      {
+        "title": "Quản lý kho",
+        "alt": "Không gian kho hàng",
+        "image_path": "https://alslogistics.vn/wp-content/uploads/2022/06/kho-hang-la-gi.jpg"
+      }
+    ],
+    "business": [
+      {
+        "title": "Kho vận cho doanh nghiệp",
+        "alt": "Giải pháp kho vận doanh nghiệp",
+        "image_path": "https://warehousesolution.vn/wp-content/uploads/2022/11/bangkok-thailand-scaled.jpeg"
+      },
+      {
+        "title": "Điều phối vận chuyển",
+        "alt": "Điều phối vận chuyển doanh nghiệp",
+        "image_path": "https://sec-warehouse.vn/wp-content/uploads/2017/11/thue-kho-dung-thuc-pham.jpg"
+      },
+      {
+        "title": "Dịch vụ lưu kho",
+        "alt": "Dịch vụ lưu kho doanh nghiệp",
+        "image_path": "https://alslogistics.vn/wp-content/uploads/2022/06/kho-hang-la-gi.jpg"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "title": "Cách lựa chọn giải pháp lưu kho phù hợp",
+      "summary": "Một số tiêu chí cần cân nhắc khi lựa chọn dịch vụ lưu kho.",
+      "published_at": "2026-01-15",
+      "image_url": "https://warehousesolution.vn/wp-content/uploads/2022/11/bangkok-thailand-scaled.jpeg"
+    },
+    {
+      "title": "Tối ưu quy trình đóng gói hàng hóa",
+      "summary": "Các bước giúp việc đóng gói rõ ràng và hiệu quả hơn.",
+      "published_at": "2026-02-10",
+      "image_url": "https://sec-warehouse.vn/wp-content/uploads/2017/11/thue-kho-dung-thuc-pham.jpg"
+    },
+    {
+      "title": "Lập kế hoạch vận chuyển liên tỉnh",
+      "summary": "Những thông tin nên chuẩn bị trước khi gửi yêu cầu vận chuyển.",
+      "published_at": "2026-03-05",
+      "image_url": "https://alslogistics.vn/wp-content/uploads/2022/06/kho-hang-la-gi.jpg"
+    }
+  ],
+  "customers": [
+    {
+      "name": "Đối tác 1",
+      "logo_url": "https://tse4.mm.bing.net/th/id/OIP._lr7lj7DFIyZzAVRPQDgVQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "name": "Đối tác 2",
+      "logo_url": "https://media.licdn.com/dms/image/v2/D560BAQHnTWAVQ_ylLg/company-logo_200_200/B56ZUMwEV4HQAI-/0/1739675682744?e=2147483647&v=beta&t=YbfIXuO_qK17VdQ21P92NSkmy-q4BFs4tZ3z4BrlZBA"
+    },
+    {
+      "name": "Đối tác 3",
+      "logo_url": "https://media.licdn.com/dms/image/v2/C4E0BAQFL82UdDB9RVw/company-logo_200_200/company-logo_200_200/0/1630628246883?e=2147483647&v=beta&t=61q4Vj8pla-9kFVRgYUxnM7g8ofFl7CJRLEiqkG1Dc4"
+    },
+    {
+      "name": "Đối tác 4",
+      "logo_url": "https://tse2.mm.bing.net/th/id/OIP.DejtgLtjeKYXQ4-LjzCBHAHaHa?r=0&w=1080&h=1080&rs=1&pid=ImgDetMain&o=7&rm=3"
+    }
+  ]
+}

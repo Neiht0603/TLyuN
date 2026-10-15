@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tìm và lọc hệ thống kho TLyuN theo khu vực, loại kho và nhu cầu lưu trữ.">
+    <title>Hệ thống kho | TLyuN</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/warehouses.css">
+    <script src="../assets/js/components.js" defer></script>
+    <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/warehouses.js" defer></script>
+  </head>
+  <body>
+    <div data-component="header"></div>
+
+    <main class="warehouses-page">
+      <header class="warehouses-page__heading">
+        <p class="warehouses-page__eyebrow">TLyuN · Hệ thống</p>
+        <h1>Hệ thống kho</h1>
+        <p>Tìm không gian lưu trữ phù hợp với nhu cầu của bạn.</p>
+      </header>
+
+      <form class="warehouse-filter card" id="warehouse-filter-form">
+        <label class="form__field" for="warehouse-city">
+          <span>Địa điểm</span>
+          <select id="warehouse-city" name="city">
+            <option value="">Tất cả khu vực</option>
+            <option value="Hồ Chí Minh">TP. Hồ Chí Minh</option>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="Bình Dương">Bình Dương</option>
+            <option value="Đồng Nai">Đồng Nai</option>
+          </select>
+        </label>
+        <label class="form__field" for="warehouse-type">
+          <span>Loại kho</span>
+          <select id="warehouse-type" name="warehouse_type">
+            <option value="">Tất cả loại kho</option>
+            <option value="standard">Kho thường</option>
+            <option value="cold">Kho lạnh</option>
+            <option value="mini">Kho mini</option>
+            <option value="container">Bãi container</option>
+          </select>
+        </label>
+        <label class="form__field" for="storage-type">
+          <span>Hình thức lưu trữ</span>
+          <select id="storage-type" name="storage_type">
+            <option value="">Tất cả hình thức</option>
+            <option value="ambient">Thường</option>
+            <option value="chilled">Mát</option>
+            <option value="frozen">Đông lạnh</option>
+          </select>
+        </label>
+        <fieldset class="warehouse-filter__group warehouse-filter__price">
+          <legend>Giá thuê / m²</legend>
+          <label class="form__field" for="min-price">
+            <span class="visually-hidden">Giá tối thiểu</span>
+            <input id="min-price" name="min_price" type="number" min="0" step="any" inputmode="decimal" placeholder="Từ">
+          </label>
+          <label class="form__field" for="max-price">
+            <span class="visually-hidden">Giá tối đa</span>
+            <input id="max-price" name="max_price" type="number" min="0" step="any" inputmode="decimal" placeholder="Đến">
+          </label>
+        </fieldset>
+        <fieldset class="warehouse-filter__group warehouse-filter__sorting">
+          <legend>Sắp xếp</legend>
+          <label class="form__field" for="sort-by">
+            <span class="visually-hidden">Sắp xếp theo</span>
+            <select id="sort-by" name="sort_by">
+              <option value="name">Tên kho</option>
+              <option value="price">Đơn giá</option>
+              <option value="area">Diện tích</option>
+            </select>
+          </label>
+          <label class="form__field" for="sort-order">
+            <span class="visually-hidden">Thứ tự sắp xếp</span>
+            <select id="sort-order" name="sort_order">
+              <option value="asc">Tăng dần</option>
+              <option value="desc">Giảm dần</option>
+            </select>
+          </label>
+        </fieldset>
+        <button class="button button--accent warehouse-filter__submit" type="submit">Tìm kho</button>
+      </form>
+
+      <section class="warehouse-results" aria-label="Kết quả kho" aria-live="polite">
+        <div class="warehouse-list" id="warehouse-list"></div>
+        <div class="warehouse-state" id="warehouse-loading-state" role="status" aria-live="polite" hidden>
+          <p class="loading" aria-busy="true">Đang tải danh sách kho...</p>
+        </div>
+        <div class="warehouse-state" id="warehouse-empty-state" role="status" hidden>
+          <p class="empty-state">Không tìm thấy kho phù hợp. Hãy thử thay đổi bộ lọc.</p>
+        </div>
+        <div class="warehouse-state" id="warehouse-error-state" role="alert" hidden>
+          <p class="notice notice--error" id="warehouse-error-message">Không thể tải danh sách kho. Kiểm tra kết nối rồi nhấn “Tìm kho” để thử lại.</p>
+        </div>
+      </section>
+      <nav class="warehouse-pagination" id="warehouse-pagination" aria-label="Phân trang kết quả kho"></nav>
+    </main>
+
+    <div data-component="footer"></div>
+  </body>
+</html>

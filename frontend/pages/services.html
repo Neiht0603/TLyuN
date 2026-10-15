@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Gửi yêu cầu báo giá vận chuyển và dịch vụ đóng gói của TLyuN.">
+    <title>Dịch vụ | TLyuN</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/services.css">
+    <script src="../assets/js/components.js" defer></script>
+    <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/services.js" defer></script>
+  </head>
+  <body>
+    <div data-component="header"></div>
+
+    <main class="services-page">
+      <section class="services-showcase" aria-labelledby="services-showcase-heading">
+        <div class="services-showcase__content">
+          <p class="services-page__eyebrow"></p>
+          <h1 id="services-showcase-heading">Dịch vụ vận chuyển và đóng gói</h1>
+          <p>Giải pháp linh hoạt từ khâu lấy hàng đến giao tận nơi.</p>
+        </div>
+        <div class="services-showcase__carousel" id="services-showcase-carousel" aria-label="Hình ảnh dịch vụ" data-fallback-image="../assets/images/warehouse-hero.jpg">
+          <div class="services-showcase__track" id="services-showcase-track" aria-live="off"></div>
+          <div class="services-showcase__pagination" id="services-showcase-pagination" role="group" aria-label="Chọn hình ảnh dịch vụ"></div>
+        </div>
+        <div class="services-showcase__status" id="services-showcase-status" role="status" aria-live="polite"></div>
+      </section>
+
+      <header class="services-page__intro">
+        <p class="services-page__eyebrow">TLyuN · Dịch vụ</p>
+        <h2>Yêu cầu báo giá dịch vụ</h2>
+        <p>Điền thông tin bên dưới để gửi yêu cầu.</p>
+      </header>
+
+      <section class="transport-overview" id="b" aria-labelledby="transport-overview-heading">
+        <div class="transport-overview__content">
+          <span class="transport-overview__eyebrow">Dịch vụ</span>
+          <h2 id="transport-overview-heading">Vận chuyển</h2>
+          <p class="transport-overview__subtitle">Từ nhà cung cấp đến kho và đến tay khách hàng.</p>
+          <ol class="transport-steps">
+            <li><span class="transport-steps__number">1</span><div><strong>Lấy hàng từ nhà cung cấp về kho</strong></div></li>
+            <li><span class="transport-steps__number">2</span><div><strong>Chuyển hàng giữa các kho</strong></div></li>
+            <li><span class="transport-steps__number">3</span><div><strong>Giao hàng nội thành và liên tỉnh</strong><span>Xe tải, container.</span></div></li>
+            <li><span class="transport-steps__number">4</span><div><strong>Vận chuyển lạnh</strong><span>Giữ nhiệt độ suốt hành trình.</span></div></li>
+            <li><span class="transport-steps__number">5</span><div><strong>Theo dõi lộ trình, trạng thái chuyến xe</strong><span>Cập nhật theo thời gian thực.</span></div></li>
+          </ol>
+        </div>
+
+        <form class="form transport-quote card" id="transport-quote-form" novalidate>
+          <h3>Báo giá vận chuyển</h3>
+          <div class="form__field">
+            <label for="pickup-location">Điểm lấy hàng</label>
+            <input id="pickup-location" name="pickup_location" type="text" autocomplete="street-address" required>
+          </div>
+          <div class="form__field">
+            <label for="delivery-location">Điểm giao hàng</label>
+            <input id="delivery-location" name="delivery_location" type="text" autocomplete="street-address" required>
+          </div>
+          <div class="transport-quote__dimensions">
+            <div class="form__field">
+              <label for="weight-kg">Khối lượng (kg)</label>
+              <input id="weight-kg" name="weight_kg" type="number" min="0.01" step="0.5" inputmode="decimal" required>
+            </div>
+            <div class="form__field">
+              <label for="length-cm">Dài (cm)</label>
+              <input id="length-cm" name="length_cm" type="number" min="0.01" step="0.5" inputmode="decimal" required>
+            </div>
+            <div class="form__field">
+              <label for="width-cm">Rộng (cm)</label>
+              <input id="width-cm" name="width_cm" type="number" min="0.01" step="0.5" inputmode="decimal" required>
+            </div>
+            <div class="form__field">
+              <label for="height-cm">Cao (cm)</label>
+              <input id="height-cm" name="height_cm" type="number" min="0.01" step="0.5" inputmode="decimal" required>
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="vehicle-type">Loại phương tiện</label>
+            <input id="vehicle-type" name="vehicle_type" type="text" required>
+          </div>
+          <div class="form__field">
+            <label for="booking-type">Hình thức đặt</label>
+            <select id="booking-type" name="booking_type" required>
+              <option value="">Chọn hình thức</option>
+              <option value="whole_vehicle">Thuê nguyên xe</option>
+              <option value="goods_only">Gửi hàng</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="transport-quantity">Số lượng</label>
+            <input id="transport-quantity" name="quantity" type="number" min="1" step="1" inputmode="numeric" required>
+          </div>
+          <div class="form__field">
+            <label for="transport-notes">Ghi chú <span>(không bắt buộc)</span></label>
+            <textarea id="transport-notes" name="notes" rows="4"></textarea>
+          </div>
+          <button class="button button--accent transport-quote__submit" type="submit">Tìm báo giá</button>
+          <div class="transport-quote__status" id="transport-quote-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <section class="value-added-services" aria-labelledby="value-added-heading">
+        <p class="value-added-services__eyebrow">C</p>
+        <h2 id="value-added-heading">Dịch vụ giá trị gia tăng</h2>
+        <p class="value-added-services__intro">Hoàn thiện chuỗi cung ứng ngay tại kho.</p>
+        <ol class="value-added-services__list">
+          <li class="value-added-card">
+            <span class="value-added-card__number">01</span>
+            <h3>Đóng gói, quấn pallet, gia công</h3>
+            <p>Bao gồm ghép bộ (kitting).</p>
+          </li>
+          <li class="value-added-card">
+            <span class="value-added-card__number">02</span>
+            <h3>Xử lý hàng hoàn trả</h3>
+            <p>Reverse logistics.</p>
+          </li>
+          <li class="value-added-card">
+            <span class="value-added-card__number">03</span>
+            <h3>Bảo hiểm hàng hóa</h3>
+            <p>Bảo vệ hàng trong kho và trên đường.</p>
+          </li>
+          <li class="value-added-card">
+            <span class="value-added-card__number">04</span>
+            <h3>Hỗ trợ hải quan, chứng từ</h3>
+            <p>Thủ tục và hồ sơ xuất nhập khẩu.</p>
+          </li>
+          <li class="value-added-card">
+            <span class="value-added-card__number">05</span>
+            <h3>Fulfillment thương mại điện tử</h3>
+            <p>Nhận đơn từ sàn, đóng gói, giao hàng.</p>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <div data-component="footer"></div>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Liên hệ TLyuN hoặc gửi lời nhắn cho đội ngũ của chúng tôi.">
+    <title>Liên hệ | TLyuN</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/contact.css">
+    <script src="../assets/js/components.js" defer></script>
+    <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/contact.js" defer></script>
+  </head>
+  <body>
+    <div data-component="header"></div>
+
+    <main class="contact-page">
+      <header class="contact-page__heading">
+        <p class="contact-page__eyebrow">TLyuN · Kết nối</p>
+        <h1>Liên hệ với chúng tôi</h1>
+        <p>Gửi lời nhắn hoặc liên hệ qua email bên dưới.</p>
+      </header>
+
+      <div class="contact-layout">
+        <section class="contact-details card" aria-labelledby="contact-details-heading">
+          <h2 id="contact-details-heading">Thông tin liên hệ</h2>
+          <p>Chọn một trong các email sau để liên hệ trực tiếp:</p>
+          <ul class="contact-details__emails">
+            <li><a href="mailto:52400318@student.tdtu.edu.vn">52400318@student.tdtu.edu.vn</a></li>
+            <li><a href="mailto:52400140@student.tdtu.edu.vn">52400140@student.tdtu.edu.vn</a></li>
+            <li><a href="mailto:52400287@student.tdtu.edu.vn">52400287@student.tdtu.edu.vn</a></li>
+          </ul>
+        </section>
+
+        <section class="contact-form-card card" aria-labelledby="contact-form-heading">
+          <h2 id="contact-form-heading">Gửi lời nhắn</h2>
+          <div class="contact-status" id="contact-status" role="status" aria-live="polite"></div>
+          <form class="form contact-form" id="contact-form" novalidate>
+            <div class="form__field">
+              <label for="contact-full-name">Họ và tên</label>
+              <input id="contact-full-name" name="full_name" type="text" autocomplete="name" required>
+            </div>
+            <div class="form__field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form__field">
+              <label for="contact-phone">Số điện thoại</label>
+              <input id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            </div>
+            <div class="form__field">
+              <label for="contact-message">Nội dung</label>
+              <textarea id="contact-message" name="message" rows="5" required></textarea>
+            </div>
+            <label class="contact-consent" for="privacy-consent">
+              <input id="privacy-consent" name="privacy_consent" type="checkbox" required>
+              <span>Tôi đồng ý để TLyuN sử dụng thông tin này nhằm phản hồi liên hệ.</span>
+            </label>
+            <button class="button button--accent contact-form__submit" id="contact-submit" type="submit">Gửi liên hệ</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <div data-component="footer"></div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng nhập thử nghiệm | TLyuN</title>
+    <link rel="stylesheet" href="/frontend/assets/css/base.css">
+    <link rel="stylesheet" href="/frontend/assets/css/components.css">
+    <style>
+      main { max-width: 38rem; margin: 5rem auto; }
+      .mock-login { padding: 2rem; }
+      .mock-login button { margin-top: 1rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card mock-login">
+        <h1>Đăng nhập thử nghiệm</h1>
+        <p>Đây chỉ là màn hình đăng nhập giả lập để kiểm tra luồng biểu mẫu. Không cần nhập mật khẩu.</p>
+        <form action="/api/v1/mock-login" method="post">
+          <input type="hidden" name="returnTo" id="mock-return-to">
+          <button class="button button--accent" type="submit">Tiếp tục với tài khoản demo</button>
+        </form>
+      </section>
+    </main>
+    <script>
+      const requestedReturn = new URLSearchParams(window.location.search).get("returnTo") || "services.html";
+      const returnUrl = new URL(requestedReturn, window.location.href);
+      document.getElementById("mock-return-to").value = returnUrl.pathname + returnUrl.search + returnUrl.hash;
+    </script>
+  </body>
+</html>

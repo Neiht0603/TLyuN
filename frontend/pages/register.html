@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Đăng ký tài khoản khách hàng TLyuN.">
+    <title>Đăng ký | TLyuN</title>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages/auth.css">
+    <script src="../assets/js/components.js" defer></script>
+    <script src="../assets/js/api.js" defer></script>
+    <script src="../assets/js/auth.js" defer></script>
+  </head>
+  <body>
+    <div data-component="header"></div>
+
+    <main class="auth-page auth-page--register">
+      <section class="auth-card card" aria-labelledby="register-heading">
+        <p class="auth-card__eyebrow">TLyuN · Tài khoản</p>
+        <h1 id="register-heading">Tạo tài khoản</h1>
+        <p class="auth-card__intro">Đăng ký tài khoản khách hàng cá nhân hoặc doanh nghiệp.</p>
+        <div class="auth-message" id="register-error" role="alert" aria-live="assertive"></div>
+        <form class="form auth-form" id="register-form" novalidate>
+          <div class="form__field">
+            <label for="account-type">Loại tài khoản</label>
+            <select id="account-type" name="account_type" required>
+              <option value="customer">Khách hàng cá nhân</option>
+              <option value="business">Khách hàng doanh nghiệp</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="full-name">Họ và tên</label>
+            <input id="full-name" name="full_name" type="text" autocomplete="name" required>
+          </div>
+          <div class="form__field auth-company-field" id="company-name-field" hidden>
+            <label for="company-name">Tên doanh nghiệp</label>
+            <input id="company-name" name="company_name" type="text" autocomplete="organization">
+          </div>
+          <div class="form__field">
+            <label for="register-email">Email</label>
+            <input id="register-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form__field">
+            <label for="register-phone">Số điện thoại</label>
+            <input id="register-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
+          <div class="form__field">
+            <label for="date-of-birth">Ngày sinh</label>
+            <input id="date-of-birth" name="date_of_birth" type="date" autocomplete="bday" required>
+          </div>
+          <div class="form__field">
+            <label for="register-password">Mật khẩu</label>
+            <input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="password-hint">
+            <span class="auth-form__hint" id="password-hint">Mật khẩu cần có ít nhất 8 ký tự.</span>
+          </div>
+          <div class="form__field">
+            <label for="confirm-password">Xác nhận mật khẩu</label>
+            <input id="confirm-password" name="confirm_password" type="password" autocomplete="new-password" minlength="8" required>
+          </div>
+          <label class="auth-consent" for="privacy-consent">
+            <input id="privacy-consent" name="privacy_consent" type="checkbox" required>
+            <span>Tôi đồng ý với chính sách quyền riêng tư.</span>
+          </label>
+          <button class="button button--accent auth-form__submit" id="register-submit" type="submit">Tạo tài khoản</button>
+        </form>
+        <p class="auth-card__footer">Đã có tài khoản? <a href="login.html" id="auth-login-link">Đăng nhập</a></p>
+      </section>
+    </main>
+
+    <div data-component="footer"></div>
+  </body>
+</html>
